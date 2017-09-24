@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Send message</div>
                     <div class="msg-post">
-                        <input type="hidden" name="_token" value="{{ $_token }}">
+                        {{ csrf_field()}}
                         <input type="hidden" name="action" value="{{ action('SocketController@sendMessage') }}">
                         <input type="text" name="message" title="message input">
                         <button id="ajaxbtn" type="submit">Send</button>
