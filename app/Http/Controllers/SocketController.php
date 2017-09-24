@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 
@@ -21,8 +22,7 @@ class socketController extends Controller
     public function writeMessage(Request $request)
     {
         $ses = $request->session()->all();
-        $token = $ses['_token'];
-        return view('writemessage', ['_token' => $token]);
+        return view('writemessage');
     }
 
     public function sendMessage(Request $request) {
